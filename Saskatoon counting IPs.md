@@ -8,6 +8,9 @@
 ```bash
 tail -n 10 /home/admin/access.log
 ```
+![Alt text](Image1.png)
+
+
 ## We can then obtain the top 10 most frequent IP addresses accessing the server, sorted by how many requests are made in descending order.
 
 ```bash
