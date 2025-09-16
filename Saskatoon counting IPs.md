@@ -17,20 +17,28 @@ tail -n 10 /home/admin/access.log
 awk '{print $1}' /home/admin/access.log | sort | uniq -c | sort -nr | head
 ```
 
+![Access log example](Images/Image2.png)
+
 Can then extract the IP with the highest count with the following command
 
 ```bash
 awk '{print $1}' /home/admin/access.log | sort | uniq -c | sort -nr | head -1 | awk '{print $2}'
 ```
 
+![Access log example](Images/Image3.png)
+
 Can then extract it to file called highestip.txt
 
 ```bash
 awk '{print $1}' /home/admin/access.log | sort | uniq -c | sort -nr | head -1 | awk '{print $2}' > /home/admin/highestip.txt
 ```
+![Access log example](Images/Image4.png)
+
 Now lets verify it
 
 ```bash
 sha1sum /home/admin/highestip.txt
 ```
+
+![Access log example](Images/Image5.png)
 
