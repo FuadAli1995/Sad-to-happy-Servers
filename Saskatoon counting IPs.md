@@ -3,7 +3,7 @@
 ## Description
 ## There's a web server access log file at /home/admin/access.log. The file consists of one line per HTTP request, with the requester's IP address at the beginning of each line. Find what's the IP address that has the most requests in this file
 
-## Let’s see how  file is formatted 
+Let’s see how  file is formatted 
 
 ```bash
 tail -n 10 /home/admin/access.log
@@ -11,7 +11,7 @@ tail -n 10 /home/admin/access.log
 ![Access log example](Images/Image1.png)
 
 
-## We can then obtain the top 10 most frequent IP addresses accessing the server, sorted by how many requests are made in descending order.
+We can then obtain the top 10 most frequent IP addresses accessing the server, sorted by how many requests are made in descending order.
 
 ```bash
 awk '{print $1}' /home/admin/access.log | sort | uniq -c | sort -nr | head
